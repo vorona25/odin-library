@@ -9,7 +9,63 @@
         <title>Odin Library</title>
     </head>
     <body>
-        
-        
+
+        <!--html for webpage background-->
+
+        <!-- button to open up pop up form-->
+        <button class="open_button" onclick="openForm()">+ New Book</button>
+
+        <!-- Form for user to submit user details-->
+        <div class="popup_form" id="myForm">
+            <!--Change action and stuff so can use js and use results of form-->
+            <form action="post" class="form_container">
+                <h1>Add New Book</h1>
+
+                <!-- Add placeholder-->
+
+                <!--Title-->
+                <label for="title"></label>
+                <input type="text" id="title" name="book_title" placeholder="Title" required>
+
+                <!--Author-->
+                <label for="author"></label>
+                <input type="text" id="author" name="book_author" placeholder="Author" required>
+
+                <!--Total Pages number-->
+                <label for="pages"></label>
+                <input type="number" min="0" id="pages" name="book_pages" class="input_pages" placeholder="Total Pages" required>
+
+                <!--Read or not? Figure out what to send in value quote-->
+                <div class="checkbox_container">
+                    <input type="checkbox" id="completed" name="book_completed" value="">
+                    <label for="completed" class="label_complete">Completed?</label>
+                </div>
+                
+                    
+                <!--Buttons at bottom to submit form or close-->
+                <button type="submit" class="btn submit">Submit</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+        </div>
+
+        <!-- button to open up popup form-->
+        <button class="open-button" onclick="openForm()">Open Form</button>
+
+        <!-- The form -->
+        <div class="form-popup" id="myForm">
+            <form action="/action_page.php" class="form-container">
+                <h1>Login</h1>
+      
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email" required>
+      
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+      
+                <button type="submit" class="btn">Login</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+        </div>
+
     </body>
 </html>
