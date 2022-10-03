@@ -11,6 +11,7 @@
     <body>
 
         <!--html for webpage background-->
+        <p class="page_header">My Library</p>
 
         <!-- button to open up pop up form-->
         <button class="open_button" onclick="openForm()">+ New Book</button>
@@ -18,22 +19,22 @@
         <!-- Form for user to submit user details-->
         <div class="popup_form" id="myForm">
             <!--Change action and stuff so can use js and use results of form-->
-            <form action="post" class="form_container">
+            <form action="" class="form_container">
                 <h1>Add New Book</h1>
 
                 <!-- Add placeholder-->
 
                 <!--Title-->
                 <label for="title"></label>
-                <input type="text" id="title" name="book_title" placeholder="Title" required>
+                <input type="text" name="book_title" placeholder="Title" id="book_title" required/>
 
                 <!--Author-->
                 <label for="author"></label>
-                <input type="text" id="author" name="book_author" placeholder="Author" required>
+                <input type="text" name="book_author" placeholder="Author" id="book_author" required/>
 
                 <!--Total Pages number-->
                 <label for="pages"></label>
-                <input type="number" min="0" id="pages" name="book_pages" class="input_pages" placeholder="Total Pages" required>
+                <input type="number" min="0" name="book_pages" class="input_pages" placeholder="Total Pages" id="book_pages" required/>
 
                 <!--Read or not? Figure out what to send in value quote-->
                 <div class="checkbox_container">
@@ -48,24 +49,45 @@
             </form>
         </div>
 
-        <!-- button to open up popup form-->
-        <button class="open-button" onclick="openForm()">Open Form</button>
+       
+       <!--Make table?-->
 
-        <!-- The form -->
-        <div class="form-popup" id="myForm">
-            <form action="/action_page.php" class="form-container">
-                <h1>Login</h1>
-      
-                <label for="email"><b>Email</b></label>
-                <input type="text" placeholder="Enter Email" name="email" required>
-      
-                <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
-      
-                <button type="submit" class="btn">Login</button>
-                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-            </form>
-        </div>
+       <table class="book_table">
+            <thead class="book_table_head">
+                <tr>
+                    <th>Name</th>
+                    <th>Author</th>
+                    <th>Total Pages</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody class="book_table_body">
+                <tr>
+                    <td>Moby Dick</td>
+                    <td>Herman Melville</td>
+                    <td>378</td>
+                    <td>
+                        <button type="button" class="btn_read" onclick="bookRead()">Read</button>                        
+                    </td>
+                    <td>
+                        <button type="button" class="btn_delete" onclick="deleteBook()">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Count of Monte Christo</td>
+                    <td>Alexandre Dumas</td>
+                    <td>640</td>
+                    <td>
+                        <button type="button" class="btn_read" onclick="bookRead()">Not Read</button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn_delete" onclick="deleteBook()">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
 
     </body>
 </html>

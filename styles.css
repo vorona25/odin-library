@@ -2,8 +2,58 @@
     margin: 0;  
 }
 
+body {
+    background-color: #171717; 
+    color: #d3d3d3;
+
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+
+    gap: 25px; /* Adjust ? */
+}
+
+/* Styling text header at top of page */
+.page_header {
+    grid-column: 2 / 3;
+
+    text-align: center;
+    font-size: 3.5rem;
+
+    margin-top: 2rem;
+    margin-bottom: 3.5rem;
+}
+
 /* Adjust positioning of .popup form for form and .open_button for the button
     to open the form */
+/* Button used to open new book form once clicked. */
+.open_button {   
+    grid-column: 2 / 3;
+    place-items: center;
+    
+    /* To center button in middle of page */
+    margin: auto;
+
+    margin-bottom: 1.5rem;
+
+    width: 11rem;
+    height: 4rem;
+
+    cursor: pointer;
+    background-color: #1d4ed8;
+    color: #d3d3d3;
+    opacity: 0.85;
+    
+    font-weight: 700;
+    font-size: 1.2em;
+
+    border: 1px solid #1d4ed8;
+    border-radius: 5px;
+}
+
+/* Add additional affects to all buttons */
+button:hover{
+    opacity: 1.0;
+}
 
 /* Styled to always appear in center of screen */
 .popup_form {
@@ -12,26 +62,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
-}
-
-/* Button used to open new book form once clicked. */
-.open_button {
-    background-color: #1d4ed8;
-    color: #d3d3d3;
-    opacity: 0.85;
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 1.2em;
-    border: 1px solid #1d4ed8;
-    border-radius: 5px;
-    padding: 15px 30px;
-
-    margin: 40px 0;  /* Change margin?*/
-}
-
-/* Add additional affects to all buttons */
-button:hover{
-    opacity: 1.0;
+    border: #1d4ed8 2px solid;
 }
 
 /* Pop up form - hidden by default */
@@ -53,7 +84,7 @@ button:hover{
 .form_container h1 {
     text-align: center;
     margin-bottom: 10px;
-    color: #f97316;
+    color: #2951be;
 }
 
 /* Customize input fields */
@@ -76,7 +107,7 @@ input::placeholder {
 
 /* When the inputs get focus, change outline color */ 
 .form_container input[type=text]:focus, .input_pages:focus {
-    outline-color: #f97316;
+    outline-color: #1d4ed8;
 }
 
 /* User input font color and size */
@@ -118,7 +149,7 @@ input, select{
 
 /* Customize submit button specifically */
 .form_container .submit {
-    background-color: #f97316;
+    background-color: #1d4ed8;
     color: rgb(216, 216, 216);
     opacity: 0.9;
 }
@@ -135,74 +166,73 @@ input, select{
 }
 
 
+/* Styling for book table */
+.book_table {
+    grid-column: 2 / 3;
+    color: #d3d3d3;
 
-
-
-/* The popup form - hidden by default */
-.form-popup {
-    display: ;
-    position: fixed;
-    bottom: 0;
-    right: 15px;
-    border: 3px solid #f1f1f1;
-    z-index: 9;
+    border-collapse: collapse;
+    margin: 20px 0;
 }
-  
-/* Button used to open the contact form - fixed at the bottom of the page */
-.open-button {
-    background-color: #555;
-    color: white;
-    padding: 16px 20px;
-    border: none;
+
+/* Styling for book table header */
+.book_table_head th {
+    text-align: left;
+    font-size: 1.2rem;
+    font-weight: 600;
+
+    padding: 12px 15px;
+    border-bottom: 1px #2b5ff0 solid;
+}
+
+/* Styling for book table content */
+.book_table_body td {
+    font-size: 1.1rem;
+    font-weight: 500;
+
+    border-bottom: 1px solid #a3a3a3;;
+    border-width: thin;
+    padding: 20px 15px;
+}
+
+/* Styling for read/not read button in each row of book table */
+.btn_read {
     cursor: pointer;
+
+    color: #d3d3d3;
+    background-color: #d97706;
     opacity: 0.8;
-    position: fixed;
-    bottom: 23px;
-    right: 28px;
-    width: 280px;
+
+    font-weight: 600;
+    font-size: 0.9rem;
+
+    width: 6.5em;
+    height: 2.5rem;
+
+    border: 1px solid #d97706;
+    border-radius: 4px;
 }
 
 
-
-
-/* Add styles to the form container */
-.form-container {
-    max-width: 300px;
-    padding: 10px;
-    background-color: white;
-}
-  
-/* Set a style for the submit/login button */
-.form-container .btn {
-    background-color: #04AA6D;
-    color: white;
-    padding: 16px 20px;
-    border: none;
+/* Styling for delete button at end of each row */
+.btn_delete {
     cursor: pointer;
-    width: 100%;
+
+    color: #d3d3d3;
+    background-color: #e11d48;
+    opacity: 0.8;
+    
+    font-weight: 600;
+    font-size: 0.9rem;
+
+    width: 6.5em;
+    height: 2.5rem;
+
+    border: 1px solid #e11d48;
+    border-radius: 4px;
 }
 
-/* Add a red background color to the cancel button */
-.form-container .cancel {
-    background-color: red;
-}
 
-/* Full-width input fields */
-.form-container input[type=text], .form-container input[type=password] {
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    border: none;
-    background: #f1f1f1;
-}
 
-/* When the inputs get focus, do something */
-.form-container input[type=text]:focus, .form-container input[type=password]:focus {
-    background-color: #ddd;
-    outline: none;
-}
 
-/* Add some hover effects to buttons */
-.form-container .btn:hover, .open-button:hover {
-    opacity: 1;
-}
+
